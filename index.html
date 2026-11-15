@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Latest Telugu movie updates, release dates, teasers, trailers, reviews and Tollywood news.">
+  <title>Telugu Movie Updates | Tollywood News</title>
+  <link rel="icon" href="images/favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#"><span class="brand-mark">TM</span><span>Telugu <b>Movie Updates</b></span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+      <nav id="mainNav">
+        <a href="#home">Home</a>
+        <a href="#latest">Latest Updates</a>
+        <a href="#upcoming">Upcoming Movies</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">YOUR TOLLYWOOD UPDATE HUB</p>
+        <h1>Everything happening in <span>Telugu Cinema.</span></h1>
+        <p>Latest movie news, first looks, teasers, trailers, release dates and more — all in one place.</p>
+        <a class="primary-btn" href="#latest">Explore Updates</a>
+      </div>
+    </section>
+
+    <section class="section" id="latest">
+      <div class="section-heading">
+        <div><p class="eyebrow">FRESH FROM TOLLYWOOD</p><h2>Latest Movie Updates</h2></div>
+        <span class="section-note">New stories. Fresh updates.</span>
+      </div>
+      <div class="updates-grid" id="updatesGrid" aria-live="polite"></div>
+      <p class="empty-state" id="emptyState" hidden>No updates yet. Add your first movie update using the editor below.</p>
+    </section>
+
+    <section class="section upcoming-section" id="upcoming">
+      <div class="section-heading">
+        <div><p class="eyebrow">MARK YOUR CALENDAR</p><h2>Upcoming Telugu Movies</h2></div>
+      </div>
+      <div class="upcoming-strip">
+        <article><span>01</span><div><h3>Release date updates</h3><p>Follow official announcements and confirmed release dates.</p></div></article>
+        <article><span>02</span><div><h3>Teasers & trailers</h3><p>Stay updated on upcoming promotional content.</p></div></article>
+        <article><span>03</span><div><h3>First looks & posters</h3><p>Discover the latest official movie announcements.</p></div></article>
+      </div>
+    </section>
+
+    <section class="section editor-section" id="editor">
+      <div class="section-heading">
+        <div><p class="eyebrow">MANAGE YOUR CONTENT</p><h2>Add / Edit Movie Updates</h2></div>
+      </div>
+      <p class="editor-intro">Use this editor to add a new update, replace an old image or edit its text. Changes are saved in this browser.</p>
+      <form id="postForm" class="editor-form">
+        <input type="hidden" id="postId">
+        <label>Movie / Update title<input id="postTitle" type="text" placeholder="e.g. New poster released for..." required maxlength="100"></label>
+        <label>Category
+          <select id="postCategory">
+            <option>Movie News</option><option>Release Date</option><option>Teaser / Trailer</option><option>First Look</option><option>Review</option>
+          </select>
+        </label>
+        <label>Image URL<input id="postImage" type="url" placeholder="https://example.com/movie-poster.jpg"></label>
+        <label>Or upload an image from your device<input id="postImageFile" type="file" accept="image/*"></label>
+        <label class="full-width">Update description<textarea id="postText" rows="4" placeholder="Write your original movie update here..." required></textarea></label>
+        <div class="form-actions full-width">
+          <button class="primary-btn" type="submit" id="saveButton">Publish Update</button>
+          <button class="secondary-btn" type="button" id="cancelEdit" hidden>Cancel edit</button>
+        </div>
+      </form>
+      <p class="editor-warning"><b>Note:</b> This starter version stores posts in your browser using localStorage. Uploaded images are also stored locally in that browser. For a public website where visitors on every device see the same posts, you will later need a CMS or backend. Do not use this browser editor as a secure admin panel.</p>
+    </section>
+
+    <section class="section about-section" id="about">
+      <p class="eyebrow">ABOUT THIS WEBSITE</p>
+      <h2>All about Telugu cinema.</h2>
+      <p>Telugu Movie Updates brings together Tollywood movie news, upcoming releases, posters, teasers, trailers and other cinema updates. We aim to share accurate information with clear sources and timely updates.</p>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">TM</span><span>Telugu <b>Movie Updates</b></span></a><p>© <span id="year"></span> Telugu Movie Updates. All rights reserved.</p></footer>
+
+  <template id="postTemplate">
+    <article class="update-card">
+      <img class="card-image" alt="" loading="lazy">
+      <div class="card-body">
+        <span class="category-tag"></span>
+        <h3 class="card-title"></h3>
+        <p class="card-text"></p>
+        <div class="card-meta"><time></time><div class="card-actions"><button class="edit-btn" type="button">Edit</button><button class="delete-btn" type="button">Delete</button></div></div>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
